@@ -17,11 +17,4 @@ public class DriverNavegador {
         return driver;
     }
 	
-	public static void finalizarDriver() {
-		if(driver != null) {
-			driver.quit();
-			driver = null;
-		}
-	}
-
 }
