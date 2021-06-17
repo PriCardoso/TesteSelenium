@@ -4,7 +4,7 @@ import java.io.File;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class DriverNavegador {
+public class DriverNavegadorPage {
 
 	
 	private static String pathDriver = System.getProperty("user.dir") + File.separator + "WebDriver" + File.separator + "chromedriver.exe";

@@ -1,6 +1,6 @@
 package helpers;
 
-public class Pessoa {
+public class PessoaPage {
 	
 	public String nome;
 	public String sobrenome;
@@ -11,7 +11,7 @@ public class Pessoa {
 	public String website;
 	public String caminhofoto; 
 	
-	public Pessoa() {
+	public PessoaPage() {
 		
 		this.nome = "Amanda";
 		this.sobrenome = "Souza";

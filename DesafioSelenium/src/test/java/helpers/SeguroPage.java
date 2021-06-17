@@ -1,6 +1,6 @@
 package helpers;
 
-public class Seguro {
+public class SeguroPage {
 	
 	public String datacomeco;
 	public String email;
@@ -10,7 +10,7 @@ public class Seguro {
 	public String confirmaSenha;
 	public String comentario;
 	
-	public Seguro() {
+	public SeguroPage() {
 		
 		this.datacomeco = "07/29/2021";
 		this.email = "amanda.souza@hotmail.com";

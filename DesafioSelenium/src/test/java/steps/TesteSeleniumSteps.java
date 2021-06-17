@@ -8,10 +8,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import helpers.Carro;
-import helpers.DriverNavegador;
-import helpers.Pessoa;
-import helpers.Seguro;
+import helpers.CarroPage;
+import helpers.DriverNavegadorPage;
+import helpers.PessoaPage;
+import helpers.SeguroPage;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.pt.Dado;
@@ -26,7 +26,7 @@ public class TesteSeleniumSteps {
 	@Before
 	public void TesteSellenium () {
 		
-		driver = new DriverNavegador().setup();
+		driver = new DriverNavegadorPage().setup();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
@@ -45,7 +45,7 @@ public class TesteSeleniumSteps {
 		String resultadoEsperado = "Enter Vehicle Data";
 		Assert.assertEquals(resultadoEsperado, driver.getTitle());
 		
-		Carro dadoscarro = new Carro();
+		CarroPage dadoscarro = new CarroPage();
 		
 		WebElement make	=	driver.findElement(By.id("make"));
 		Select select	=	new	Select(make);
@@ -89,7 +89,7 @@ public class TesteSeleniumSteps {
 	    String resultadoEsperado = "Enter Insurant Data";
 		Assert.assertEquals(resultadoEsperado, driver.getTitle());
 		
-		Pessoa dadospessoa = new Pessoa();
+		PessoaPage dadospessoa = new PessoaPage();
 		driver.findElement(By.id("firstname")).sendKeys(dadospessoa.nome);
 		driver.findElement(By.id("lastname")).sendKeys(dadospessoa.sobrenome);
 		driver.findElement(By.id("birthdate")).sendKeys(dadospessoa.nascimento);
@@ -127,7 +127,7 @@ public class TesteSeleniumSteps {
 		String resultadoEsperado = "Enter Product Data";
 		Assert.assertEquals(resultadoEsperado, driver.getTitle());
 		
-		Seguro dadosseguro = new Seguro();
+		SeguroPage dadosseguro = new SeguroPage();
 		driver.findElement(By.id("startdate")).sendKeys(dadosseguro.datacomeco);
 		
 		WebElement insuranceSum	=	driver.findElement(By.xpath("//*[@id=\"insurancesum\"]"));
@@ -167,7 +167,7 @@ public class TesteSeleniumSteps {
 		String resultadoEsperado = "Send Quote";
 		Assert.assertEquals(resultadoEsperado, driver.getTitle());
 		
-		Seguro dadosseguro = new Seguro();
+		SeguroPage dadosseguro = new SeguroPage();
 		driver.findElement(By.id("email")).sendKeys(dadosseguro.email);
 		driver.findElement(By.id("phone")).sendKeys(dadosseguro.telefone);
 		driver.findElement(By.id("username")).sendKeys(dadosseguro.nomeDeUsuario);

@@ -1,6 +1,6 @@
 package helpers;
 
-public class Carro {
+public class CarroPage {
 	
 	public String performance;
 	public String price;
@@ -11,7 +11,7 @@ public class Carro {
 	public String payload;
 	public String peso;
 	
-	public Carro() {
+	public CarroPage() {
 			
 			this.performance = "150";
 			this.price = "18000";
