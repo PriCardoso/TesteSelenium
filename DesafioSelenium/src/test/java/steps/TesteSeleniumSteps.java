@@ -41,6 +41,10 @@ public class TesteSeleniumSteps {
 	
 	@Dado("preencho o formulário Vehicle Data e pressione next")
 	public void preencho_o_formulário_vehicle_data_e_pressione_next() {
+		
+		String resultadoEsperado = "Enter Vehicle Data";
+		Assert.assertEquals(resultadoEsperado, driver.getTitle());
+		
 		Carro dadoscarro = new Carro();
 		
 		WebElement make	=	driver.findElement(By.id("make"));
@@ -75,15 +79,16 @@ public class TesteSeleniumSteps {
 	    
 	    driver.findElement(By.id("licenseplatenumber")).sendKeys(dadoscarro.license);
 	    driver.findElement(By.id("annualmileage")).sendKeys(dadoscarro.mileage);
-	    
-	    String resultadoEsperado = "Enter Vehicle Data";
-		Assert.assertEquals(resultadoEsperado, driver.getTitle());
 		
 	    driver.findElement(By.id("nextenterinsurantdata")).click();
 	}
 	
 	@Dado("preencho o formulário Insurant Data e pressione next")
 	public void preencho_o_formulário_insurant_data_e_pressione_next() {
+
+	    String resultadoEsperado = "Enter Insurant Data";
+		Assert.assertEquals(resultadoEsperado, driver.getTitle());
+		
 		Pessoa dadospessoa = new Pessoa();
 		driver.findElement(By.id("firstname")).sendKeys(dadospessoa.nome);
 		driver.findElement(By.id("lastname")).sendKeys(dadospessoa.sobrenome);
@@ -112,15 +117,16 @@ public class TesteSeleniumSteps {
 	    	        
 	    WebElement fileInput = driver.findElement(By.xpath("//*[@id=\"picture\"]")); 
 	    fileInput.sendKeys(dadospessoa.caminhofoto); 
-	    
-	    String resultadoEsperado = "Enter Insurant Data";
-		Assert.assertEquals(resultadoEsperado, driver.getTitle());
 	
 	    driver.findElement(By.id("nextenterproductdata")).click();
 	}
 	
-	@Dado("preencho o formulárioProduct Data e pressione next")
+	@Dado("preencho o formulário Product Data e pressione next")
 	public void preencho_o_formulário_product_data_e_pressione_next() {
+		
+		String resultadoEsperado = "Enter Product Data";
+		Assert.assertEquals(resultadoEsperado, driver.getTitle());
+		
 		Seguro dadosseguro = new Seguro();
 		driver.findElement(By.id("startdate")).sendKeys(dadosseguro.datacomeco);
 		
@@ -142,10 +148,6 @@ public class TesteSeleniumSteps {
 	    WebElement carroCortesia	=	driver.findElement(By.xpath("//*[@id=\"courtesycar\"]"));
 		select	=	new	Select(carroCortesia);
 	    select.selectByVisibleText("Yes");
-	    
-	    String resultadoEsperado = "Enter Product Data";
-		Assert.assertEquals(resultadoEsperado, driver.getTitle());
-	    
 	    driver.findElement(By.id("nextselectpriceoption")).click();
 	}
 	
@@ -161,6 +163,10 @@ public class TesteSeleniumSteps {
 	
 	@Dado("preencho o formulário Send Quote e pressione Send")
 	public void preencho_o_formulário_send_quote_e_pressione_send() {
+
+		String resultadoEsperado = "Send Quote";
+		Assert.assertEquals(resultadoEsperado, driver.getTitle());
+		
 		Seguro dadosseguro = new Seguro();
 		driver.findElement(By.id("email")).sendKeys(dadosseguro.email);
 		driver.findElement(By.id("phone")).sendKeys(dadosseguro.telefone);
@@ -168,9 +174,6 @@ public class TesteSeleniumSteps {
 		driver.findElement(By.id("password")).sendKeys(dadosseguro.senha);
 		driver.findElement(By.id("confirmpassword")).sendKeys(dadosseguro.confirmaSenha);
 		driver.findElement(By.id("Comments")).sendKeys(dadosseguro.comentario);
-		
-		String resultadoEsperado = "Send Quote";
-		Assert.assertEquals(resultadoEsperado, driver.getTitle());
 		
 		driver.findElement(By.id("sendemail")).click();
 	}
